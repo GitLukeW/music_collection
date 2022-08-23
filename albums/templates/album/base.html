@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Albums</title>
+    <link rel="stylesheet" href="{% static 'css/album.css' %}" />
+  </head>
+  <body>
+    <header>Albums</header>
+    <main class="container">
+      <div class="row">
+        <div class="col">{% block content %} {% endblock %}</div>
+      </div>
+    </main>
+  </body>
+</html>
