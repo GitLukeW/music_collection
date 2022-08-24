@@ -1,3 +1,4 @@
+from django.db.models.functions import Lower
 from django.shortcuts import render, get_object_or_404
 from .models import Album
 from .forms import AlbumForm
@@ -8,7 +9,7 @@ from django.utils import timezone
 
 
 def album_list(request):
-    albums = Album.objects.all().order_by('title')
+    albums = Album.objects.all().order_by(Lower('title'))
     return render(request, 'album/album_list.html', {'albums': albums})
 
 
