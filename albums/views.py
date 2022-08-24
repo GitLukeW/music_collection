@@ -8,7 +8,7 @@ from django.utils import timezone
 
 
 def album_list(request):
-    albums = Album.objects.all()
+    albums = Album.objects.all().order_by('title')
     return render(request, 'album/album_list.html', {'albums': albums})
 
 
@@ -44,3 +44,9 @@ def album_edit(request, pk):
     else:
         form = AlbumForm(instance=post)
     return render(request, 'album/album_edit.html', {'form': form})
+
+
+def album_remove(request, pk):
+    post = get_object_or_404(Album, pk=pk)
+    post.delete()
+    return redirect('album_list')
