@@ -29,3 +29,16 @@ header {
   transform: scaleX(1);
   transform-origin: center;
 }
+
+.inline {
+  display: flex;
+}
+
+.new_button {
+  text-align: left;
+  display: flex;
+}
+
+.text {
+  margin: 1rem;
+}
