@@ -42,3 +42,28 @@ header {
 .text {
   margin: 1rem;
 }
+
+.artist_info {
+  font-size: 20px;
+  margin-bottom: -1rem;
+}
+
+.created {
+  margin-bottom: -0.5rem;
+  font-size: 15px;
+}
+
+.album_detail_album,
+.album_detail_artist {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.album_detail_artist {
+  margin-top: 2rem;
+}
+
+.album_detail,
+.album_artist {
+  font-size: 20px;
+}

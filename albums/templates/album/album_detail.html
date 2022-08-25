@@ -1,6 +1,12 @@
 {% extends 'album/base.html' %} {% block content %}
-<h1>Album: {{ album.title }}</h1>
-<p>Artist: {{ album.artist }}</p>
+<div class="album_detail">
+  <p class="album_detail_album">Album:</p>
+  {{ album.title }}
+</div>
+<div class="album_artist">
+  <p class="album_detail_artist">Artist:</p>
+  {{ album.artist }}
+</div>
 <aside class="actions">
   {% if user.is_authenticated %}
   <form
@@ -8,7 +14,6 @@
     action="{% url 'album_remove' pk=album.pk %}"
     method="post"
   >
-  
     {% csrf_token %}
     <a class="btn btn-secondary" href="{% url 'album_edit' pk=album.pk %}">
       {% include './icons/pencil-fill.svg' %}
