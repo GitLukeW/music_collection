@@ -37,10 +37,7 @@ def album_edit(request, pk):
     if request.method == "POST":
         form = AlbumForm(request.POST, instance=post)
         if form.is_valid():
-            album = form.save(commit=False)
-            album.author = request.user
-            album.published_date = timezone.now()
-            album.save()
+            album = form.save()
             return redirect('album_detail', pk=post.pk)
     else:
         form = AlbumForm(instance=post)
